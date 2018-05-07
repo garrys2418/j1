@@ -4,6 +4,7 @@ node {
    [$class: 'GenericTrigger',
     genericVariables: [
      [key: 'reference', value: '$.ref'],
+	 [expressionType: 'JSONPath', key: 'body', value: '$'],
 	 [
       key: 'id',
       value: '$.commits.id',
@@ -35,6 +36,10 @@ node {
 	]
  ])
  ])
+ 
+ def payLoad = "${env.body}"
+
+echo "${payLoad}"
 
  stage("build") {
   sh '''
