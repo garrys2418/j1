@@ -39,14 +39,19 @@ node {
  
  def payLoad = "${env.body}"
 
-echo "${payLoad}"
+if payLoad.contains("iptables"){
 
- stage("build") {
-  sh '''
-  echo Variables from shell:
-  echo reference $reference
-  echo before $before
-  echo id $id
-  '''
- }
+ stage('iptables'){
+         
+        agent any
+            steps{load "plays/iptables/iptables.groovy"}
+        }
+		}
+		elseif payLoad.contains("users"){
+		stage('users'){
+           
+            steps{load "plays/users/users.groovy"}
+        }
+		
+		}
 }
