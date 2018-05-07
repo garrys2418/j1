@@ -11,13 +11,7 @@ node {
       regexpFilter: '', //Optional, defaults to empty string
       defaultValue: '' //Optional, defaults to empty string
      ],
-	 [
-      key: 'commits',
-      value: '$.commits.modified',
-	  expressionType: 'JSONPath', //Optional, defaults to JSONPath
-      regexpFilter: '', //Optional, defaults to empty string
-      defaultValue: '' //Optional, defaults to empty string
-     ]
+	 [key: 'commits', value: '$.commits.modified']
 	 
     ],
     genericRequestVariables: [
