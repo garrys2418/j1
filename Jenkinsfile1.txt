@@ -10,7 +10,15 @@ node {
       expressionType: 'JSONPath', //Optional, defaults to JSONPath
       regexpFilter: '', //Optional, defaults to empty string
       defaultValue: '' //Optional, defaults to empty string
+     ],
+	 [
+      key: 'modified',
+      value: '$.modified',
+      expressionType: 'JSONPath', //Optional, defaults to JSONPath
+      regexpFilter: '', //Optional, defaults to empty string
+      defaultValue: '' //Optional, defaults to empty string
      ]
+	 
     ],
     genericRequestVariables: [
      [key: 'requestWithNumber', regexpFilter: '[^0-9]'],
@@ -33,12 +41,7 @@ node {
   sh '''
   echo Variables from shell:
   echo reference $reference
-  echo before $before
-  echo requestWithNumber $requestWithNumber
-  echo requestWithString $requestWithString
-  echo headerWithNumber $headerWithNumber
-  echo headerWithString $headerWithString
-  echo X_GitHub_Event $X_GitHub_Event
+  echo before $modified
   '''
  }
 }
