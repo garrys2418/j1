@@ -43,13 +43,11 @@ node {
 
         stage('build'){
       if (payLoad.contains("iptables")){
-            steps{load "plays/iptables/iptables.groovy"}
+       load "plays/iptables/iptables.groovy"
         }
 		
 	  if (payLoad.contains("users")){
-		
-           
-            steps{load "plays/users/users.groovy"}
+		load "plays/users/users.groovy"
         }
 		
 		}
