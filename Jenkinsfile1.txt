@@ -12,8 +12,8 @@ node {
       defaultValue: '' //Optional, defaults to empty string
      ],
 	 [
-      key: 'commit',
-      value: '$.commit',
+      key: 'commits',
+      value: '$.commits.modified',
 	  expressionType: 'JSONPath', //Optional, defaults to JSONPath
       regexpFilter: '', //Optional, defaults to empty string
       defaultValue: '' //Optional, defaults to empty string
@@ -42,7 +42,7 @@ node {
   echo Variables from shell:
   echo reference $reference
   echo before $before
-  echo commit $commit
+  echo commits $commits
   '''
  }
 }
