@@ -15,8 +15,8 @@ node {
     ],
     printContributedVariables: true,
     printPostContent: true,
-    regexpFilterText: '$reference',
-    regexpFilterExpression: jobName
+    regexpFilterText: '',
+    regexpFilterExpression: ''
    ]
   ])
  ])
