@@ -42,8 +42,7 @@ node {
 if (payLoad.contains("iptables")){
 
  stage('iptables'){
-         
-        agent any
+      
             steps{load "plays/iptables/iptables.groovy"}
         }
 		}
