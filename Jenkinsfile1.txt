@@ -13,10 +13,7 @@ node {
      ],
 	 [
       key: 'modified',
-      value: '$.modified',
-      expressionType: 'JSONPath', //Optional, defaults to JSONPath
-      regexpFilter: '', //Optional, defaults to empty string
-      defaultValue: '' //Optional, defaults to empty string
+      value: '$.modified'
      ]
 	 
     ],
@@ -41,7 +38,7 @@ node {
   sh '''
   echo Variables from shell:
   echo reference $reference
-  echo before $modified
+  echo modified $modified
   '''
  }
 }
