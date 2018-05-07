@@ -4,6 +4,13 @@ node {
    [$class: 'GenericTrigger',
     genericVariables: [
      [key: 'reference', value: '$.ref'],
+	 [
+      key: 'id',
+      value: '$.commits.id',
+      expressionType: 'JSONPath', //Optional, defaults to JSONPath
+      regexpFilter: '', //Optional, defaults to empty string
+      defaultValue: '' //Optional, defaults to empty string
+     ],
      [
       key: 'before',
       value: '$.before',
@@ -21,6 +28,7 @@ node {
   echo Variables from shell:
   echo reference $reference
   echo before $before
+  echo id $id
   '''
  }
 }
