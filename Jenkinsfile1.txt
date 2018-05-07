@@ -5,13 +5,6 @@ node {
     genericVariables: [
      [key: 'reference', value: '$.ref'],
 	 [expressionType: 'JSONPath', key: 'body', value: '$'],
-	 [
-      key: 'id',
-      value: '$.after',
-      expressionType: 'JSONPath', //Optional, defaults to JSONPath
-      regexpFilter: '', //Optional, defaults to empty string
-      defaultValue: '' //Optional, defaults to empty string
-     ],
      [
       key: 'before',
       value: '$.before',
@@ -46,8 +39,8 @@ node {
        load "plays/iptables/iptables.groovy"
         }
 		
-	  if (payLoad.contains("users")){
-		load "plays/users/users.groovy"
+	  if (payLoad.contains("users1")){
+		load "plays/users1/users1.groovy"
         }
 		
 		}
