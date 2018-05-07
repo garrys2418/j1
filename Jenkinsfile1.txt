@@ -15,8 +15,8 @@ node {
 	 
     ],
     genericRequestVariables: [
-     [key: 'requestWithNumber', regexpFilter: '[^0-9]'],
-     [key: 'requestWithString', regexpFilter: '']
+     [key: 'requestWithNumber', regexpFilter: '[^1-9]'],
+     [key: 'requestWithString', regexpFilter: '[*iptables*]']
     ],
     genericHeaderVariables: [
      [key: 'headerWithNumber', regexpFilter: '[^0-9]'],
@@ -37,6 +37,11 @@ node {
   echo reference $reference
   echo before $before
   echo commits $commits
+  echo requestWithNumber $requestWithNumber
+  echo requestWithString $requestWithString
+  echo headerWithNumber $headerWithNumber
+  echo headerWithString $headerWithString
+  echo X_GitHub_Event $X_GitHub_Event
   '''
  }
 }
