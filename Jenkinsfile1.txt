@@ -39,7 +39,7 @@ node {
  
  def payLoad = "${env.body}"
 
-if payLoad.contains("iptables"){
+if (payLoad.contains("iptables")){
 
  stage('iptables'){
          
@@ -47,7 +47,7 @@ if payLoad.contains("iptables"){
             steps{load "plays/iptables/iptables.groovy"}
         }
 		}
-		elseif payLoad.contains("users"){
+		elseif (payLoad.contains("users")){
 		stage('users'){
            
             steps{load "plays/users/users.groovy"}
