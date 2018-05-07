@@ -41,12 +41,12 @@ node {
 
 if (payLoad.contains("iptables")){
 
- stage('iptables'){
+        stage('iptables'){
       
             steps{load "plays/iptables/iptables.groovy"}
         }
 		}
-		elseif (payLoad.contains("users")){
+if (payLoad.contains("users")){
 		stage('users'){
            
             steps{load "plays/users/users.groovy"}
