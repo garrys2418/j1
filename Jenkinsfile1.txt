@@ -18,7 +18,11 @@ node {
       regexpFilter: '', //Optional, defaults to empty string
       defaultValue: '' //Optional, defaults to empty string
      ]
-    ]
+    ],
+	printContributedVariables: true,
+    printPostContent: true,
+    regexpFilterText: '',
+    regexpFilterExpression: ''
 	]
  ])
  ])
