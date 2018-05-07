@@ -1,30 +1,22 @@
-node {
- def jobName = env.JOB_NAME.split("/")[1]
- properties([
-  pipelineTriggers([
-   [$class: 'GenericTrigger',
-    genericVariables: [
-     [expressionType: 'JSONPath', key: 'reference', value: '$.ref'],
-     [
-      key: 'before',
-      value: '$.before',
-      expressionType: 'JSONPath', //Optional, defaults to JSONPath
-      regexpFilter: '', //Optional, defaults to empty string
-      defaultValue: '' //Optional, defaults to empty string
-     ]
-    ],
-    printContributedVariables: true,
-    printPostContent: true,
-    regexpFilterText: '',
-    regexpFilterExpression: ''
-   ]
-  ])
- ])
-
- stage("build") {
-  sh '''
-  echo Build $jobName ref $reference before $before
-  '''
- }
-}
-
+pipeline {
+  agent any
+  triggers {
+    GenericTrigger(
+     genericVariables: [
+      [key: 'ref', value: '$.ref'],
+	  [key: 'commits', value: '$.commits.modified'] 
+     ],
+     causeString: 'Triggered on $ref',
+     regexpFilterExpression: '',
+     regexpFilterText: '',
+     printContributedVariables: true,
+     printPostContent: true
+    )
+  }
+  stages {
+    stage('Some step') {
+      steps {
+        sh "echo $ref $commits"
+      }
+    }
+  }
