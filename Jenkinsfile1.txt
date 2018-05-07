@@ -32,6 +32,7 @@ node {
  ])
  
  def payLoad = "${env.body}"
+ def branch_name = "${env.reference}"
 
 
 
